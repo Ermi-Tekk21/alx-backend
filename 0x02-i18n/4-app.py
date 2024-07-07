@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-""" Force locale with URL parameter
+"""A Basic Flask app with internationalization support.
 """
-from flask import Flask
 from flask_babel import Babel
-from flask import render_template, request
+from flask import Flask, render_template, request
 
 
 class Config:

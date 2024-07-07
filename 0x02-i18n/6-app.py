@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Use user locale
+"""A Basic Flask app with internationalization support.
 """
-from flask import Flask
 from flask_babel import Babel
-from flask import render_template, request, g
 from typing import Union, Dict
+from flask import Flask, render_template, request, g
 
 
 class Config:

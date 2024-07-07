@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Parametrize templates
+"""A Basic Flask app with internationalization support.
 """
-from flask import Flask
 from flask_babel import Babel
-from flask import render_template, request
+from flask import Flask, render_template, request
 
 
 class Config:
-    """Flask Babel configuration.
+    """Represents a Flask Babel configuration.
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -22,7 +21,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> str:
-    """ _ or gettext function to parametrize your templates
+    """Retrieves the locale for a web page.
     """
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 

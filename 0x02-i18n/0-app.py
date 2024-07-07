@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Basic Flask app
-   First you will setup a basic Flask app
+"""A Basic Flask app.
 """
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-@app.route("/")
+@app.route('/')
 def get_index() -> str:
     """The home/index page.
     """

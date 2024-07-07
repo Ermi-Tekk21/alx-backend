@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-""" Basic Babel setup
+"""A Basic Flask app.
 """
-from flask import Flask
 from flask_babel import Babel
-from flask import render_template
+from flask import Flask, render_template
 
 
 class Config:
-    """create a Config class that has a LANGUAGES
-       class attribute equal to ["en", "fr"].
+    """Represents a Flask Babel configuration.
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -22,7 +20,7 @@ babel = Babel(app)
 
 
 @app.route('/')
-def hello() -> str:
+def get_index() -> str:
     """The home/index page.
     """
     return render_template('1-index.html')
